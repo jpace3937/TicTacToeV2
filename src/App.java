@@ -6,6 +6,8 @@ public class App {
         String difficultyChoice;
         String orderChoice;
         int diff;
+        boolean goFirst;
+        String move = "";
         Scanner input = new Scanner(System.in);
         System.out.println("Hello! Welcome to TicTacToeV2.");
         while(true){
@@ -30,16 +32,12 @@ public class App {
         while(true){
             System.out.println("Would you like to go first?");
             orderChoice = input.nextLine();
-            if(orderChoice.contains("h") || orderChoice.contains("H")){
-                diff = 3;
+            if(orderChoice.contains("y") || orderChoice.contains("Y")){
+                goFirst = true;
                 break;
             }
-            else if(orderChoice.contains("m") || orderChoice.contains("M")){
-                diff = 2;
-                break;
-            }
-            else if(difficultyChoice.contentEquals("ea") || difficultyChoice.contentEquals("Ea")){
-                diff = 1;
+            else if(orderChoice.contains("n") || orderChoice.contains("N")){
+                goFirst = false;
                 break;
             }
             else{
@@ -60,8 +58,13 @@ public class App {
             }
             System.out.println();
         }
-        if(diff == 1){
-            
+        if(goFirst){
+            if(diff == 1){
+                while(true){
+                    System.out.println("Please enter your move.");
+                    move = input.nextLine();
+                }
+            }
         }
     }
 }
