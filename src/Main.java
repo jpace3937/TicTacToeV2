@@ -22,44 +22,48 @@ public class Main {
             }
         }
 
-        System.out.println("Hello! Welcome to TicTacToeV2.");
+        System.out.println("Hello! Welcome to TicTacToeV2.\n");
+        
         while(true){
             System.out.println("Choose your difficulty: Easy, Medium, or Hard");
             difficultyChoice = input.nextLine();
-            if(difficultyChoice.contains("hard") || difficultyChoice.contains("Hard")){
+            if(difficultyChoice.equals("hard") || difficultyChoice.equals("Hard")){
                 diff = 3;
                 break;
             }
-            else if(difficultyChoice.contains("medium") || difficultyChoice.contains("Medium")){
+            else if(difficultyChoice.equals("medium") || difficultyChoice.equals("Medium")){
                 diff = 2;
                 break;
             }
-            else if(difficultyChoice.contentEquals("easy") || difficultyChoice.contentEquals("Easy")){
+            else if(difficultyChoice.equals("easy") || difficultyChoice.equals("Easy")){
                 diff = 1;
                 break;
             }
             else{
-                System.out.println("Please enter a valid option.");
+                System.out.println("\nPlease enter a valid option.");
             }
         }
         while(true){
-            System.out.println("Would you like to go first: Yes, or No?");
+            System.out.println("\nWould you like to go first: Yes, or No?");
             orderChoice = input.nextLine();
-            if(orderChoice.contains("yes") || orderChoice.contains("Yes")){
+            if(orderChoice.equals("yes") || orderChoice.equals("Yes")){
                 goFirst = true;
                 break;
             }
-            else if(orderChoice.contains("no") || orderChoice.contains("No")){
+            else if(orderChoice.equals("no") || orderChoice.equals("No")){
                 goFirst = false;
                 break;
             }
             else{
-                System.out.println("Please enter a valid option.");
+                System.out.println("\nPlease enter a valid option.");
             }
         }
         
         if(goFirst){
-            Ops.player(board, input, diff);
+            Ops.player(board, diff, goFirst, input);
+        }
+        else{
+            Ops.player2(board, diff, goFirst, input);
         }
     }
 }
