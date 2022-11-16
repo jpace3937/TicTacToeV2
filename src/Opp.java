@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Ops {
     
-    private static boolean flag, flag1, keepGoing, goFirst = false;
+    private static boolean flag, keepGoing, goFirst = false;
     private static String move, orderChoice, choice;
-    private static int moveNum, num;
+    private static int moveNum;
+    private static int num = 1;
     
     public static void printBoard(String[][][] board){
         for(int i = 0; i < 3; i++){
@@ -41,6 +42,7 @@ public class Ops {
                                 }
                             }
                         }
+                        num = 1;
                         break;
                     }
                     else if(choice.contains("no") || choice.contains("No")){
@@ -111,7 +113,6 @@ public class Ops {
                     break;
                 }
             }
-            winner(board, input);
         }
     }
     
@@ -121,19 +122,16 @@ public class Ops {
             for(int j = 0; j < 3; j++){
                 for(int k = 0; k < 3; k++){
                     if(k % 2 != 0){
-                        if(board[i][j][k].equals("X") && board[i][j][k - 1].equals("X") && board[i][j][k + 1].equals("X") && !flag1){
+                        if(board[i][j][k].equals("X") && board[i][j][k - 1].equals("X") && board[i][j][k + 1].equals("X")){
                             System.out.println("X's won!");
-                            flag1 = true;
                             return true;
                         }
-                        else if(board[i][k][j].equals("X") && board[i][k - 1][j].equals("X") && board[i][k + 1][j].equals("X") && !flag1){
+                        else if(board[i][k][j].equals("X") && board[i][k - 1][j].equals("X") && board[i][k + 1][j].equals("X")){
                             System.out.println("X's won!");
-                            flag1 = true;
                             return true;
                         }
-                        else if(board[k][i][j].equals("X") && board[k - 1][i][j].equals("X") && board[k + 1][i][j].equals("X") && !flag1){
+                        else if(board[k][i][j].equals("X") && board[k - 1][i][j].equals("X") && board[k + 1][i][j].equals("X")){
                             System.out.println("X's won!");
-                            flag1 = true;
                             return true;
                         }
                     }
