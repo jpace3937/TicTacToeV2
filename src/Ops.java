@@ -4,7 +4,7 @@ public class Ops {
     
     private static boolean flag, flag1, keepGoing, done = false;
     private static String move, orderChoice, choice;
-    private static int moveNum, num1, compMove1, compMove2, compMove3;
+    private static int num1, compMove1, compMove2, compMove3;
     private static int num = 1;
     
     /**
