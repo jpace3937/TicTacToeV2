@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     
     private static Scanner input;
-    private static String[][][]board;
+    private static String[][][] board;
     private static String difficultyChoice, orderChoice;
     private static int diff, num;
     private static boolean goFirst;
