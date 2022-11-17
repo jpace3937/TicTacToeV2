@@ -192,6 +192,7 @@ public class Ops {
      * */
      public static void compMove(String[][][] board){
               
+        flag1 = false;
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 for(int k = 0; k < 3; k++){
@@ -272,29 +273,54 @@ public class Ops {
         else if(board[1][2][0].equals("X") && board[1][1][1].equals("X") && (!board[1][0][2].equals("O") || !board[1][2][0].equals("X"))){
             board[1][0][2] = "O";
         }
+        else if(board[2][0][0].equals("X") && board[2][1][1].equals("X") && (!board[2][2][2].equals("O") || !board[2][2][2].equals("X"))){
+            board[2][2][2] = "O";
+        }
+        else if(board[2][2][2].equals("X") && board[2][1][1].equals("X") && (!board[2][0][0].equals("O") || !board[2][0][0].equals("X"))){
+            board[2][0][0] = "O";
+        }
+        else if(board[2][0][0].equals("X") && board[2][2][2].equals("X") && (!board[2][1][1].equals("O") || !board[2][1][1].equals("X"))){
+            board[2][1][1] = "O";
+        }
+        else if(board[2][0][2].equals("X") && board[2][1][1].equals("X") && (!board[2][2][0].equals("O") || !board[2][2][0].equals("X"))){
+            board[2][2][0] = "O";
+        }
+        else if(board[2][2][0].equals("X") && board[2][1][1].equals("X") && (!board[2][0][2].equals("O") || !board[2][0][2].equals("X"))){
+            board[2][0][2] = "O";
+        }
+        else if(board[2][2][0].equals("X") && board[2][0][2].equals("X") && (!board[2][1][1].equals("O") || !board[2][1][1].equals("X"))){
+            board[2][1][1] = "O";
+        }
+        else if(board[0][0][0].equals("X") && board[1][1][0].equals("X") && (!board[2][2][0].equals("O") || !board[2][2][0].equals("X"))){
+            board[2][2][0] = "O";
+        }
+        else if(board[0][0][0].equals("X") && board[2][2][0].equals("X") && (!board[1][1][0].equals("O") || !board[1][1][0].equals("X"))){
+            board[1][1][0] = "O";
+        }
+        else if(board[1][1][0].equals("X") && board[2][2][0].equals("X") && (!board[0][0][0].equals("O") || !board[0][0][0].equals("X"))){
+            board[0][0][0] = "O";
+        }
+        else if(board[0][0][1].equals("X") && board[1][1][1].equals("X") && (!board[2][2][1].equals("O") || !board[2][2][1].equals("X"))){
+            board[2][2][1] = "O";
+        }
+        else if(board[0][0][1].equals("X") && board[2][2][1].equals("X") && (!board[1][1][1].equals("O") || !board[2][2][1].equals("X"))){
+            board[1][1][1] = "O";
+        }
+        else if(board[2][2][1].equals("X") && board[1][1][1].equals("X") && (!board[0][0][1].equals("O") || !board[0][0][1].equals("X"))){
+            board[0][0][1] = "O";
+        }
+        else if(board[0][0][2].equals("X") && board[1][1][2].equals("X") && (!board[2][2][2].equals("O") || !board[2][2][2].equals("X"))){
+            board[2][2][2] = "O";
+        }
+        else if(board[0][0][2].equals("X") && board[2][2][2].equals("X") && (!board[1][1][2].equals("O") || !board[1][1][2].equals("X"))){
+            board[1][1][2] = "O";
+        }
+        else if(board[2][2][2].equals("X") && board[1][1][2].equals("X") && (!board[0][0][2].equals("O") || !board[0][0][2].equals("X"))){
+            board[0][0][2] = "O";
+        }
         
         
         /*
-        else if(board[2][0][0].equals("X") && board[2][1][1].equals("X") && board[2][2][2].equals("X")){
-            System.out.println("X's won!");
-            return true;
-        }
-        else if(board[2][0][2].equals("X") && board[2][1][1].equals("X") && board[2][2][0].equals("X")){
-            System.out.println("X's won!");
-            return true;
-        }
-        else if(board[0][0][0].equals("X") && board[1][1][0].equals("X") && board[2][2][0].equals("X")){
-            System.out.println("X's won!");
-            return true;
-        }
-        else if(board[0][0][1].equals("X") && board[1][1][1].equals("X") && board[2][2][1].equals("X")){
-            System.out.println("X's won!");
-            return true;
-        }
-        else if(board[0][0][2].equals("X") && board[1][1][2].equals("X") && board[2][2][2].equals("X")){
-            System.out.println("X's won!");
-            return true;
-        }
         else if(board[0][2][0].equals("X") && board[1][1][0].equals("X") && board[2][2][0].equals("X")){
             System.out.println("X's won!");
             return true;
